@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Finder App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <h1><i class="fas fa-book"></i> Book Finder</h1>
+          <p class="subtitle">Discover millions of books from Google Books</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="search-section">
+          <div class="search-container">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by title, author, ISBN, or keyword..."
+              />
+              <button id="searchButton">Search</button>
+            </div>
+            <div class="search-tips">
+              <p>
+                Try searching for: <span class="tip">"Harry Potter"</span>,
+                <span class="tip">"Stephen King"</span>,
+                <span class="tip">"Python programming"</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-section">
+          <div class="results-header">
+            <h2 id="resultsTitle">Search Results</h2>
+            <div class="results-count" id="resultsCount"></div>
+          </div>
+
+          <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Searching for books...</p>
+          </div>
+
+          <div class="books-grid" id="booksContainer">
+            <!-- Books will be dynamically inserted here -->
+          </div>
+
+          <div class="no-results" id="noResultsMessage">
+            <i class="fas fa-book-open"></i>
+            <h3>No books found</h3>
+            <p>Try a different search term</p>
+          </div>
+
+          <div class="pagination" id="pagination">
+            <!-- Pagination buttons will be dynamically inserted here -->
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Book Finder App &copy; 2023 | Powered by Google Books API</p>
+        <p class="footer-links">
+          <a href="https://developers.google.com/books" target="_blank"
+            >Google Books API</a
+          >
+          |
+          <a href="https://github.com" target="_blank">GitHub</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div class="modal" id="bookModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalBookContent"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
